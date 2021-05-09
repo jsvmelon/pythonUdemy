@@ -7,18 +7,18 @@ input("Press ENTER to start")
 
 while low != high:
     guesses += 1
-    guess = low + (high-low) // 2
-    high_low = input("My guess is {}. Should I guess higher or lower? "
-                     "Enter h or l, or c if my guess was correct ".
-                     format(guess)).casefold()
+    guess = low + (high - low) // 2
+    user_feedback = input("My guess is {}. Should I guess higher or lower? "
+                          "Enter h or l, or c if my guess was correct ".
+                          format(guess)).casefold()
 
-    if high_low == "h":
+    if user_feedback == "h":
         # guess higher
         low = guess + 1
-    elif high_low == "l":
+    elif user_feedback == "l":
         # guess lower
         high = guess - 1
-    elif high_low == "c":
+    elif user_feedback == "c":
         # correct guess
         print("yay! Got it in {} guesses".format(guesses))
         break
