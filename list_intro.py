@@ -1,23 +1,34 @@
-computer_parts = ["computer",
-                  "monitor",
-                  "keyboard",
-                  "mouse",
-                  "mouse mat"]
-for part in computer_parts:
-    print(part)
+computer_parts = [
+    "computer",
+    "monitor",
+    "keyboard",
+    "mouse",
+    "mouse mat",
+]
 
-print()
-print(computer_parts[2])
+print(computer_parts)
 
-print(computer_parts[0:3])
-print(computer_parts[-1])
+# computer_parts[3] = "trackball"
+print(computer_parts[3:])
 
-print(id(computer_parts))
-computer_parts += ["USB Bank"]
-print(id(computer_parts))
+computer_parts[3:] = ["trackball"]
+print(computer_parts)
 
-a = 5
-print(id(a))
-a += 1
-print(id(a))
-
+# for part in computer_parts:
+#     print(part)
+#
+# print()
+# print(computer_parts[2])
+#
+# print(computer_parts[0:3])
+# print(computer_parts[-1])
+#
+# print(id(computer_parts))
+# computer_parts += ["USB Bank"]
+# print(id(computer_parts))
+#
+# a = 5
+# print(id(a))
+# a += 1
+# print(id(a))
+#
