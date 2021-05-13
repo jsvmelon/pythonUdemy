@@ -28,7 +28,7 @@ def first_improvement(data):
         stop -= 1
 
     print("Stop:", stop)
-    del data[stop+1:]
+    del data[stop + 1:]
     print("After: {}".format(data))
     return data
 
