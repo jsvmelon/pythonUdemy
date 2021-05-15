@@ -1,20 +1,20 @@
 import random
 
 
-def get_data():
-    return [4, 5, 104, 105, 110, 120, 130, 150, 160, 170, 183, 185, 186, 187,
-            188, 191, 350, 360]
+def get_data(): return [4, 5, 104, 105, 110, 120, 130, 150, 160, 170, 183, 185,
+                        186, 187, 188, 191, 350, 360]
 
 
-def get_min_valid():
-    return 100
+def get_min_valid(): return 100
 
 
-def get_max_valid():
-    return 200
+def get_max_valid(): return 200
 
 
 # process the low values first
+# in a second iteration look at high values
+# THIS FUNCTION ASSUMES SORTED DATA
+# THIS FUNCTION HAS AN INTENTIONAL BUG AND DOES NOT WORK
 def first_improvement(data):
     print("Before: {}".format(data))
     if len(data) == 0:
