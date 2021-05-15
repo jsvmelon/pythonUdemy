@@ -157,7 +157,6 @@ def edge_case_test(test_function):
     return result
 
 
-
 print("First function")
 print(test_with_example_data(erroneous_delete))
 print(test_random(erroneous_delete))
