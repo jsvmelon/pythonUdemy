@@ -157,16 +157,6 @@ def edge_case_test(test_function):
     return result
 
 
-# print("Erroneous delete")
-# erroneous_delete(get_data())
-#
-# print("\nWorks, but clumsily")
-# first_improvement(get_data())
-#
-# print("\nThis should be better")
-# second_improvement(get_data())
-#
-
 
 print("First function")
 print(test_with_example_data(erroneous_delete))
@@ -182,3 +172,15 @@ print("\nThird function")
 print(test_with_example_data(second_improvement))
 print(test_random(second_improvement))
 print(edge_case_test(second_improvement))
+
+print("Erroneous delete")
+erroneous_delete(get_data())
+
+print("\nWorks, but clumsily")
+first_improvement(get_data())
+
+print("\nThis should be better")
+second_improvement(get_data())
+
+
+
