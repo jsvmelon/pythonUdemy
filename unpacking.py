@@ -15,3 +15,10 @@ print(x, y, z)
 data = [1, 2, 76]
 x, y, z = data
 print(x, y, z)
+
+for t in enumerate(("abcdefgh")):
+    index, character = t
+    print(index, character)
+
+index, character = (0, 'a')
+print(index, character)
