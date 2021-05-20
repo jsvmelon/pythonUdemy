@@ -16,3 +16,10 @@ for i in values:
     integer_values.extend([int(i)])
 
 print(integer_values)
+
+# variant 2
+integer_values = []
+for index, item in enumerate(values):
+    values[index] = int(item) # ignore the warning, it's not relevant here
+
+print(values)
