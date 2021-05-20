@@ -13,7 +13,7 @@ print(values)
 # mini challenge
 integer_values = []
 for i in values:
-    integer_values.extend([int(i)])
+    integer_values.append(int(i))
 
 print(integer_values)
 
