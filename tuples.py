@@ -29,3 +29,17 @@ print(table[1] * table[2])
 name, length, width, height, price = table
 print(length * width)
 
+# this is one list of items
+albums = ["Welcome to my Nightmare", "Alice Cooper", 1975,
+          "Bad Company", "Bad Company", 1974,
+          ]
+print(len(albums))
+
+# this is a list of two tuples
+albums = [("Welcome to my Nightmare", "Alice Cooper", 1975),
+          ("Bad Company", "Bad Company", 1974),
+          ]
+print(len(albums))
+
+for name, artist, year in albums:
+    print("Album: {}, Artist: {}, Year: {}".format(name, artist, year))
