@@ -9,9 +9,10 @@ def choose_album():
     return int(input()) - 1  # return 0 based result
 
 
-def choose_song(album_choice):
+# int album_choice_input
+def choose_song(album_choice_input):
     print("Please choose your song (invalid choice exits):")
-    for index, (track_number, song) in enumerate(albums[album_choice][SONGS_LIST_INDEX]):
+    for index, (track_number, song) in enumerate(albums[album_choice_input][SONGS_LIST_INDEX]):
         print("{}: {}".format(track_number, song))
 
     return int(input()) - 1  # return 0 based result
