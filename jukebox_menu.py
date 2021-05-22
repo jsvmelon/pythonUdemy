@@ -28,7 +28,3 @@ while True:
             print("Playing {} ...\n".format(albums[album_choice][SONGS_LIST_INDEX][song_choice][SONG_TITLE_INDEX]))
     else:
         break
-
-    # print(album_choice)
-    # print(albums[album_choice - 1])
-    # print(songs_list)
