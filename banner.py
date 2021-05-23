@@ -1,19 +1,18 @@
-def banner(text):
-    screen_width = 50
-    if len(text) > screen_width - 4:
+def banner(text, width):
+    if len(text) > width - 4:
         raise ValueError("String {} is larger than specified width {}".
-                         format(text, screen_width))
+                         format(text, width))
 
     if text == "*":
-        print("*" * screen_width)
+        print("*" * width)
     else:
-        output_string = "**{}**".format(text.center(screen_width - 4))
+        output_string = "**{}**".format(text.center(width - 4))
         print(output_string)
 
 
-banner("*")
-banner("Hello dude")
-banner(" ")
-banner("Hello dudes")
-banner("F" * 60)
-banner("*")
+banner("*", 80)
+banner("Hello dude", 80)
+banner(" ", 80)
+banner("Hello dudes", 80)
+banner("F" * 60, 80)
+banner("*", 80)
