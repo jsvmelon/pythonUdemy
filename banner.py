@@ -1,6 +1,6 @@
 def banner(text=" ", width=66):
     """
-    Function that prints text given inside a surrounding banner of '**'
+    Prints text given inside a surrounding banner of '**'.
     Without any parameter a surrounded empty line will be printed.
     :param text: The text to be printed. Default is the empty string.
     :param width: The width of a banner line, default is 66
@@ -17,6 +17,8 @@ def banner(text=" ", width=66):
         print(output_string)
 
 
+print(banner.__doc__)
+help(banner)
 banner("*")
 banner("Hello dude")
 banner(width=70)

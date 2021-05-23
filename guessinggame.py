@@ -1,4 +1,11 @@
 def read_integer():
+    """
+    Reads an `integer` from the command line and returns the value.
+    If the input is non-numerical the user is requested to enter their data
+    until they provide valid input.
+    The function allows for a negative value to be entered.
+    :return: The numerical value entered by the user
+    """
     value = ""
     while not value.isnumeric():
         value = input()
