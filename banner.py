@@ -1,4 +1,4 @@
-def banner(text, width):
+def banner(text, width=66):
     if len(text) > width - 4:
         raise ValueError("String {} is larger than specified width {}".
                          format(text, width))
@@ -10,9 +10,9 @@ def banner(text, width):
         print(output_string)
 
 
-banner("*", 80)
-banner("Hello dude", 80)
-banner(" ", 80)
-banner("Hello dudes", 80)
-banner("F" * 60, 80)
-banner("*", 80)
+banner("*")
+banner("Hello dude")
+banner(" ")
+banner("Hello dudes")
+banner("F" * 60)
+banner("*")
