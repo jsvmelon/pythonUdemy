@@ -1,7 +1,8 @@
 def banner(text):
-    screen_width = 80
+    screen_width = 50
     if len(text) > screen_width - 4:
-        print("Too long")
+        raise ValueError("String {} is larger than specified width {}".
+                         format(text, screen_width))
 
     if text == "*":
         print("*" * screen_width)
@@ -14,4 +15,5 @@ banner("*")
 banner("Hello dude")
 banner(" ")
 banner("Hello dudes")
+banner("F" * 60)
 banner("*")
