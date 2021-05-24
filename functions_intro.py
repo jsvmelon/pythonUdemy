@@ -3,13 +3,13 @@ def multiply(a, b):
     return result
 
 
-def is_palindrome(string):
+def is_palindrome(string: str) -> bool:
     return string[::-1].casefold() == string.casefold()
 
 
-def is_palindrome_sentence(string):
+def is_palindrome_sentence(sentence: str) -> bool:
     result = ""
-    for char in string:
+    for char in sentence:
         if char.isalpha():
             result += char
     return is_palindrome(result)
