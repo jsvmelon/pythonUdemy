@@ -30,6 +30,7 @@ def fibonacci_iterative(n: int) -> int:
     """
     Calculates the `n` -th fibonacci number, starting with 0 for f_0 in with
     an iteration instead of recursion.
+    :exception ValueError: if `n` is lower than 0
     :param n: zero or any positive integer
     :return: the n-th fibonacci number
     """
