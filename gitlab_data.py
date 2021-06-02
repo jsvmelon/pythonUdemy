@@ -1,9 +1,12 @@
 import requests
 import json
 
+from JiraFields import JiraFields
+
 GITLAB_ISSUE_BASE_URL = "https://git.corp.smarkets.com/api/v4/projects/98/issues"
 file = open("/home/js/code/GitLabToken", "r")
 GL_TOKEN = file.readline()[:-1]  # remove the trailing newline character
+file.close()
 
 
 def get_gitlab_data_page(base_path: str, page: int, gl_token: str):
@@ -35,10 +38,13 @@ total_pages, issues_json_page = get_gitlab_data_page(GITLAB_ISSUE_BASE_URL, curr
 issues_json = issues_json_page
 
 while current_page < total_pages:
-    # get all the notes for each issue
+    # build the Jira fields object for each entry
     # for issue in issues_json_page:
-    #     note_url = issue["_links"]["notes"]
-    #     get_gitlab_data_page(note_url, 1, GL_TOKEN)
+    #     fields = JiraFields()
+
+        # note_url = issue["_links"]["notes"]
+        # get_gitlab_data_page(note_url, 1, GL_TOKEN)
+
     current_page += 1
     total_pages, issues_json_page = get_gitlab_data_page(GITLAB_ISSUE_BASE_URL, current_page, GL_TOKEN)
     issues_json.extend(issues_json_page)
