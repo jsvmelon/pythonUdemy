@@ -1,8 +1,6 @@
 import requests
 import json
 
-from JiraFields import JiraFields
-
 GITLAB_ISSUE_BASE_URL = "https://git.corp.smarkets.com/api/v4/projects/98/issues"
 file = open("/home/js/code/GitLabToken", "r")
 GL_TOKEN = file.readline()[:-1]  # remove the trailing newline character
