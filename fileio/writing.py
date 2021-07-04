@@ -20,11 +20,11 @@ imelda = (
     ((1, "Pulling the Rug"), (2, "Psycho"), (3, "Mayhem"), (4, "Kentish Town Waltz"))
 )
 
-with open("imelda.txt", mode="w") as imelda_file:
+with open("../imelda.txt", mode="w") as imelda_file:
     print(imelda, file=imelda_file)
 
 # using eval to read the data back in a set
-with open("imelda.txt", mode='r') as imelda_file:
+with open("../imelda.txt", mode='r') as imelda_file:
     contents = imelda_file.readline()
 
 # eval is not great for security reasons in case the data has been modified

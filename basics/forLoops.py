@@ -4,7 +4,7 @@ for character in parrot:
     print(character)
 #
 numbers = "1,234,432;234:345.345 567"
-#numbers = input("Give me numbers: ")
+# numbers = input("Give me numbers: ")
 separators = ""
 
 for character in numbers:

@@ -9,7 +9,7 @@ print("Jan {0}, Feb {1}, Mar {0}, April {2}, May {0}, June {2}, July {0}, August
       "November {2}, December {0}".
       format(31, 28, 30))
 
-print("""Jan {0}
+print("""Jan {0} 
 Feb {1} 
 Mar {0}
 April {2} 
