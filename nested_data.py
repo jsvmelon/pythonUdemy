@@ -1,4 +1,4 @@
-from album_data import albums
+from lists.album_data import albums
 
 for name, artist, year, songs in albums:
     print("Album: {}, Artist: {}, Year: {}, Songs: {}".format(name, artist, year, songs))

@@ -16,5 +16,7 @@ print("Pi is approx {0:62.50f}".format(22/7))
 print("Pi is approx {0:<72.50f}".format(22/7))
 print("Pi is approx {0:<72.50f}".format(22/7))
 
+print()
+
 for i in range(1, 13):
     print("No. {} square is {} and cubed {:4}".format(i, i**2, i**3))
