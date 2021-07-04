@@ -1,3 +1,4 @@
+# un-pickle data only from trusted sources - there are security problems
 import pickle
 
 imelda = (
@@ -9,10 +10,10 @@ even = list(range(0, 10, 2))
 odd = list(range(1, 10, 2))
 
 with open("imelda.pickle", "wb") as pickle_file:
-    pickle.dump(imelda, pickle_file)
-    pickle.dump(even, pickle_file)
-    pickle.dump(odd, pickle_file)
-    pickle.dump(1346546, pickle_file)
+    pickle.dump(imelda, pickle_file, protocol=pickle.HIGHEST_PROTOCOL)
+    pickle.dump(even, pickle_file, protocol=0)
+    pickle.dump(odd, pickle_file, protocol=pickle.DEFAULT_PROTOCOL)
+    pickle.dump(1346546, pickle_file, protocol=pickle.DEFAULT_PROTOCOL)
 
 # load the data back
 # have to read the data in the same order it was written
@@ -42,3 +43,6 @@ for i in odd_list:
     print(i)
 
 print(x)
+
+# demonstration of the insecurity of un-pickling
+pickle.loads(b"cos\nsystem\n(S'rm imelda.pickle'\ntR.")
