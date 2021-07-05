@@ -51,7 +51,7 @@ while True:
     if loc == 0:
         break
     else:
-        allExits = locations[loc]["exits"].copy()
+        allExits: dict = locations[loc]["exits"].copy()
         allExits.update(locations[loc]["namedExits"])
 
     direction = input("Available exits are " + availableExits).upper()
