@@ -6,6 +6,7 @@ scrambled_eggs = ["eggs", "butter", "milk"]
 soup = ["tin of soup"]
 pasta = ["pasta", "cheese"]
 
+# playing with updating a shelf
 with shelve.open("recipes") as recipes:
     recipes["blt"] = blt
     recipes["beans on toast"] = beans_on_toast
