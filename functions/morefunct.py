@@ -1,37 +1,63 @@
-import tkinter
+from math import sqrt
+from tkinter import Canvas, Tk
+from numpy import arange
 
 
-def parabola(x_input: int):
-    return x_input * x_input / 100
+def parabola(page: Canvas, size: int) -> None:
+    for x in arange(0, size, 0.5):
+        y = x * x / size
+        plot(page, x, y)
+        plot(page, -x, y)
 
 
-def draw_axes(canvas: tkinter.Canvas):
-    canvas.update()
-    x_origin = canvas.winfo_width() / 2
-    y_origin = canvas.winfo_height() / 2
-    canvas.configure(scrollregion=(-x_origin, -y_origin, x_origin, y_origin))
-    canvas.create_line(-x_origin, 0, x_origin, 0, fill="grey")
-    canvas.create_line(0, y_origin, 0, -y_origin, fill="grey")
+def circle(page: Canvas, radius: int, g: int, h: int) -> None:
+    resolution = 0.01
+    for x in arange(g, g + radius, resolution):
+        y = h + (sqrt(radius ** 2 - ((x - g) ** 2)))
+        plot(page, x, y)  # top right
+        plot(page, x, 2 * h - y)  # bottom right
+        plot(page, 2 * g - x, y)  # top left
+        plot(page, 2 * g - x, 2 * h - y)  # bottom left
 
 
-def plot(canvas: tkinter.Canvas, x_coord, y_coord):
-    canvas.create_line(x_coord, -y_coord, x_coord + 1, -y_coord + 1, fill="red")
+def draw_axes(page: Canvas):
+    page.update()
+    x_origin = page.winfo_width() / 2
+    y_origin = page.winfo_height() / 2
+    page.configure(scrollregion=(-x_origin, -y_origin, x_origin, y_origin))
+    page.create_line(-x_origin, 0, x_origin, 0, fill="grey")
+    page.create_line(0, y_origin, 0, -y_origin, fill="grey")
 
 
-main_window = tkinter.Tk()
-main_window.title("Parabola")
-main_window.geometry("640x480")
+def plot(page: Canvas, x_coord, y_coord):
+    page.create_line(x_coord, -y_coord, x_coord + 1, -y_coord + 1, fill="red")
 
-canvas1 = tkinter.Canvas(main_window, width=320, height=480)
-canvas1.grid(row=0, column=0)
 
-canvas2 = tkinter.Canvas(main_window, width=320, height=480, background="blue")
-canvas2.grid(row=0, column=1)
+def create_coordinate_system():
+    window = Tk()
+    window.title("Parabola")
+    window.geometry("640x480")
 
-draw_axes(canvas1)
-draw_axes(canvas2)
+    page = Canvas(window, width=640, height=480)
+    page.grid(row=0, column=0)
 
-for x in range(-100, 101):
-    plot(canvas1, x, parabola(x))
+    draw_axes(page)
+    return page, window
+
+
+canvas, main_window = create_coordinate_system()
+
+parabola(canvas, 100)
+parabola(canvas, 200)
+
+circle(canvas, 100, 100, 100)
+circle(canvas, 100, 100, -100)
+circle(canvas, 100, -100, 100)
+circle(canvas, 100, -100, -100)
+circle(canvas, 10, 30, 30)
+circle(canvas, 10, 30, -30)
+circle(canvas, 10, -30, 30)
+circle(canvas, 10, -30, -30)
+circle(canvas, 30, 0, 0)
 
 main_window.mainloop()
