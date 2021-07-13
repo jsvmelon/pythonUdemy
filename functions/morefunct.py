@@ -1,4 +1,3 @@
-from math import sqrt
 from tkinter import Canvas, Tk
 from numpy import arange
 
