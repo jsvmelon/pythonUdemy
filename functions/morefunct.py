@@ -46,19 +46,27 @@ def create_coordinate_system():
     return page, window
 
 
-canvas, main_window = create_coordinate_system()
+def run_code():
+    canvas, main_window = create_coordinate_system()
 
-parabola(canvas, 100)
-parabola(canvas, 200)
+    parabola(canvas, 100)
+    parabola(canvas, 200)
 
-circle(canvas, 100, 100, 100)
-circle(canvas, 100, 100, -100)
-circle(canvas, 100, -100, 100)
-circle(canvas, 100, -100, -100)
-circle(canvas, 10, 30, 30)
-circle(canvas, 10, 30, -30)
-circle(canvas, 10, -30, 30)
-circle(canvas, 10, -30, -30)
-circle(canvas, 30, 0, 0, colour="black")
+    circle(canvas, 100, 100, 100)
+    circle(canvas, 100, 100, -100)
+    circle(canvas, 100, -100, 100)
+    circle(canvas, 100, -100, -100)
+    circle(canvas, 10, 30, 30)
+    circle(canvas, 10, 30, -30)
+    circle(canvas, 10, -30, 30)
+    circle(canvas, 10, -30, -30)
+    circle(canvas, 30, 0, 0, colour="black")
 
-main_window.mainloop()
+    main_window.mainloop()
+
+
+# test the scope and only execute if this module is run directly
+# I think this is ugly though, we should rather separate the function implementations
+# from the below run
+if __name__ == "__main__":
+    run_code()
