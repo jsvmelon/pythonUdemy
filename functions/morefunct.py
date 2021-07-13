@@ -10,14 +10,15 @@ def parabola(page: Canvas, size: int) -> None:
         plot_point(page, -x, y)
 
 
-def circle(page: Canvas, radius: int, g: int, h: int) -> None:
-    resolution = 0.01
-    for x in arange(g, g + radius, resolution):
-        y = h + (sqrt(radius ** 2 - ((x - g) ** 2)))
-        plot_point(page, x, y)  # top right
-        plot_point(page, x, 2 * h - y)  # bottom right
-        plot_point(page, 2 * g - x, y)  # top left
-        plot_point(page, 2 * g - x, 2 * h - y)  # bottom left
+def circle(page: Canvas, radius: int, g: int, h: int, colour="red") -> None:
+    page.create_oval(g + radius, h + radius, g - radius, h - radius, outline=colour, width=1)
+    # resolution = 0.01
+    # for x in arange(g, g + radius, resolution):
+    #     y = h + (sqrt(radius ** 2 - ((x - g) ** 2)))
+    #     plot_point(page, x, y)  # top right
+    #     plot_point(page, x, 2 * h - y)  # bottom right
+    #     plot_point(page, 2 * g - x, y)  # top left
+    #     plot_point(page, 2 * g - x, 2 * h - y)  # bottom left
 
 
 def draw_axes(page: Canvas):
@@ -58,6 +59,6 @@ circle(canvas, 10, 30, 30)
 circle(canvas, 10, 30, -30)
 circle(canvas, 10, -30, 30)
 circle(canvas, 10, -30, -30)
-circle(canvas, 30, 0, 0)
+circle(canvas, 30, 0, 0, colour="black")
 
 main_window.mainloop()
