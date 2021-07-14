@@ -1,6 +1,3 @@
-import unittest
-
-
 def fact(n):
     """ calculate n! iteratively"""
     result = 1
@@ -30,7 +27,7 @@ def fib(n: int) -> int:
     n_minus_2, n_minus_1 = (1, 1)
     if 0 <= n <= 2:
         return 1
-    for i in range(3, n + 1):
+    for _ in range(3, n + 1):
         next_value = n_minus_1 + n_minus_2
         n_minus_2 = n_minus_1
         n_minus_1 = next_value
