@@ -1,10 +1,12 @@
-# a = 12
-# b = 4
-# print(a+b)
-# print(a.__add__(b))
+# EVERYTHING is an object in python
+a = 12
+b = 4
+print(a+b)
+print(a.__add__(b))
 
 
 class Kettle(object):
+    power_source = "electricity"
 
     def __init__(self, make, price):
         self.make = make
@@ -57,3 +59,19 @@ print(kenwood.power)
 
 # hamilton does not have the attribute ...
 # print(hamilton.power)
+
+print(Kettle.power_source)
+print(hamilton.power_source)
+print(kenwood.power_source)
+
+# setting power_source on the instance
+# this means setting the power_source on the class later does not have an effect on the instance
+kenwood.power_source = "electricity"
+
+# setting power_source on the class
+Kettle.power_source = "atomic"
+
+# display the attributes and methods
+print(Kettle.__dict__)
+print(hamilton.__dict__)
+print(kenwood.__dict__)
