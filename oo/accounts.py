@@ -11,32 +11,32 @@ class Account:
         return pytz.utc.localize(utc_time)
 
     def __init__(self, name: str, balance: int):
-        self.name = name
-        self.balance = balance
-        self.transaction_log = []
-        print("Account created for " + self.name)
+        self._name = name
+        self.__balance = balance
+        self._transaction_log = [(Account._current_time(), balance)]
+        print("Account created for {} with an initial balance of {}".format(self._name, balance))
 
     def deposit(self, amount: int) -> None:
         if amount > 0:
-            self.balance += amount
+            self.__balance += amount  # this is discouraged
             self.show_balance()
-            self.transaction_log.append((Account._current_time(), amount))
+            self._transaction_log.append((Account._current_time(), amount))
         else:
             print("The deposit amount must be positive and non zero")
 
     def withdraw(self, amount: int) -> None:
-        if 0 < amount <= self.balance:
-            self.balance -= amount
+        if 0 < amount <= self.__balance:
+            self.__balance -= amount
             self.show_balance()
-            self.transaction_log.append((Account._current_time(), -amount))
+            self._transaction_log.append((Account._current_time(), -amount))
         else:
             print("The amount must be greater than zero and less or equal to balance")
 
     def show_balance(self) -> None:
-        print("Balance is {}".format(self.balance))
+        print("Balance is {}".format(self.__balance))
 
     def show_log(self):
-        for date, amount in self.transaction_log:
+        for date, amount in self._transaction_log:
             if amount > 0:
                 transaction_type = "deposited"
             else:
@@ -60,3 +60,10 @@ if __name__ == "__main__":
     js_account.withdraw(34234234234)
 
     js_account.show_log()
+
+    steph = Account("Steph", 800)
+    steph._Account__balance = 200  # name mangling changes the name of __balance
+    steph.deposit(100)
+    steph.withdraw(200)
+    steph.show_log()
+    print(steph.__dict__)
