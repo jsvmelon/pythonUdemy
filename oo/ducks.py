@@ -1,4 +1,20 @@
+class Wing:
+    def __init__(self, ratio):
+        self.ratio = ratio
+
+    def fly(self):
+        if self.ratio > 1:
+            return "Weee, this is fun"
+        elif self.ratio == 1:
+            return "This is hard work, but I'm flying"
+        else:
+            return "I think I'll just walk"
+
+
 class Duck:
+    def __init__(self):
+        self._wing = Wing(1.8)
+
     def walk(self):
         return "Waddle, waddle, waddle"
 
@@ -7,6 +23,9 @@ class Duck:
 
     def quack(self):
         return "Quack quack"
+
+    def fly(self):
+        return self._wing.fly()
 
 
 class Penguin:
