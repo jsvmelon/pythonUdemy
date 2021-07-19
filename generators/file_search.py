@@ -17,7 +17,7 @@ def find_songs(albums):
             yield song
 
 
-album_list = find_albums("music", "Aerosmith")
+album_list = find_albums("music", "Black*")
 song_list = find_songs(album_list)
 
 for s in song_list:
