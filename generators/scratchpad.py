@@ -1,3 +1,5 @@
+import generators
+
 a = 2
 b = 3
 print("a = {}, b = {}".format(a, b))
@@ -7,7 +9,7 @@ a, b = b, a
 print("a = {}, b = {}".format(a, b))
 
 
-def fibonacci(n: int):
+def fibonacci(n: int) -> generators:
     a_, b_ = 0, 1
     for i in range(0, n+1):
         yield a_
